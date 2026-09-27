@@ -1,0 +1,82 @@
+:root {
+  --board-bg: #0f1117;
+  --board-panel: #171a23;
+  --board-card: #1f2330;
+  --board-text: #e8eaf0;
+  --board-muted: #9aa3b5;
+  --board-accent: #7c9cff;
+  --board-blocked: #ff7a7a;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--board-bg);
+  color: var(--board-text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+.board { padding: 48px 56px; }
+.board h1 { font-size: 40px; margin: 0 0 32px; letter-spacing: -0.5px; }
+.columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 1180px; }
+.column { background: var(--board-panel); border-radius: 14px; padding: 20px; min-height: 520px; }
+.column h2 { font-size: 20px; color: var(--board-muted); font-weight: 600; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 1px; }
+.card {
+  background: var(--board-card);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border-left: 4px solid var(--board-accent);
+}
+.badge {
+  font-size: 14px; font-weight: 700; color: var(--board-blocked);
+  border: 1px solid var(--board-blocked); border-radius: 999px; padding: 3px 10px; white-space: nowrap;
+}
+.tool-call {
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 16px;
+  background: #1c2440;
+  color: var(--board-accent);
+  border: 1px solid var(--board-accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 6px 0;
+  display: inline-block;
+}
+.summary-card {
+  background: #171a23;
+  border: 1px solid #2c3242;
+  border-left: 5px solid #7c9cff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 8px 0;
+  color: #e8eaf0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-width: 420px;
+}
+.summary-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.summary-progress { height: 12px; background: #2a2f3d; border-radius: 6px; overflow: hidden; }
+.summary-bar { height: 100%; background: #5fd4a8; border-radius: 6px; }
+.summary-stat { font-size: 16px; color: #9aa3b5; margin-top: 10px; }
+.summary-blocked { font-size: 16px; color: #ff7a7a; margin-top: 8px; }
+.a2ui-stat { background: #1f2330; border-radius: 12px; padding: 14px 18px; min-width: 110px; text-align: center; }
+.a2ui-stat-value { font-size: 30px; font-weight: 700; color: #7c9cff; }
+.a2ui-stat-label { font-size: 14px; color: #9aa3b5; margin-top: 4px; }
+.a2ui-list { background: #1f2330; border-radius: 12px; padding: 14px 18px; margin-top: 10px; }
+.a2ui-list-title { font-size: 15px; font-weight: 700; color: #ff7a7a; margin-bottom: 6px; }
+.a2ui-list-item { font-size: 16px; color: #e8eaf0; padding: 3px 0; }
+.approval-card { background: #171a23; border: 1px solid #f5b86b; border-radius: 14px; padding: 16px 18px; margin: 8px 0; min-width: 380px; }
+.approval-title { font-size: 18px; font-weight: 700; color: #e8eaf0; margin-bottom: 12px; }
+.approval-actions { display: flex; gap: 10px; }
+.approval-actions button { font-size: 16px; border-radius: 8px; padding: 8px 16px; border: none; cursor: pointer; }
+.approval-yes { background: #ff7a7a; color: #0f1117; font-weight: 700; }
+.approval-no { background: #2a2f3d; color: #e8eaf0; }
+.approval-done { font-size: 15px; color: #9aa3b5; margin: 6px 0; }
+.thread-list { position: fixed; left: 56px; bottom: 40px; width: 1180px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.thread-head { display: flex; gap: 12px; align-items: center; color: #9aa3b5; font-size: 18px; margin-right: 8px; }
+.thread-list button { font-size: 16px; border-radius: 10px; padding: 10px 16px; border: 1px solid #2c3242; background: #171a23; color: #e8eaf0; cursor: pointer; }
+.thread-list button.active { border-color: #7c9cff; color: #7c9cff; }
+.thread-head button { border-color: #5fd4a8; color: #5fd4a8; }
+/* A2UI basic components use light inline styles; match the dark board. */
+.a2ui-surface { --a2ui-primary-color: #7c9cff; color: #e8eaf0; }
+.a2ui-surface [style*="background-color: rgb(255, 255, 255)"] { background-color: #171a23 !important; border-color: #2c3242 !important; color: #e8eaf0 !important; }

@@ -1,0 +1,16 @@
+[
+  { "id": "root", "component": "Column",
+    "children": ["heading", "stats", "blocked"] },
+  { "id": "heading", "component": "Text",
+    "text": "Sprint report", "variant": "h3" },
+  { "id": "stats", "component": "Row",
+    "children": ["todo", "doing", "done"] },
+  { "id": "todo", "component": "StatTile",
+    "label": "To Do", "value": { "path": "/todo" } },
+  { "id": "doing", "component": "StatTile",
+    "label": "In Progress", "value": { "path": "/doing" } },
+  { "id": "done", "component": "StatTile",
+    "label": "Done", "value": { "path": "/done" } },
+  { "id": "blocked", "component": "TaskList",
+    "title": "Blocked", "items": { "path": "/blocked" } }
+]
